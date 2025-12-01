@@ -256,12 +256,9 @@ npm run report:allure
 
 ## 👤 Autor
 
-**Erica Okuda**
+**Erica Ocuda**
 
 ## 📄 Licença
 
 Este projeto é um POC (Proof of Concept) para fins educacionais e de demonstração.
 
-## 📞 Suporte
-
-Para dúvidas ou sugestões, entre em contato com o time de QA.
