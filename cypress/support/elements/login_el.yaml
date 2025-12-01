@@ -1,0 +1,23 @@
+login: 
+  titulo: 'tela de login'
+  description: 'Elementos da tela de login'
+
+  iptLogin: 
+    selector: '#user-name'
+    description: 'Campo de input para o nome de usuário'
+    type: 'input'
+
+  iptSenha: 
+    selector: '#password'
+    description: 'Campo de input para a senha'
+    type: 'input'
+
+  btnLogin: 
+    selector: '#login-button'
+    description: 'Botão de login'
+    type: 'button'
+
+  titLogin: 
+    selector: '.app_logo'
+    description: 'Título da tela de login "Swag Labs"'
+    type: 'text'

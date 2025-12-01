@@ -1,0 +1,24 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "allure-commandline": "^2.34.1",
+    "allure-cypress": "^3.4.2",
+    "cross-env": "^10.1.0",
+    "cypress": "^15.7.0"
+  },
+  "scripts": {
+    "eslint": "npx eslint .",
+    "cy:hml": "cross-env AMBIENTE=hml npx cypress open",
+    "cy:qas": "cross-env AMBIENTE=qas npx cypress open",
+    "cy:prd": "cross-env AMBIENTE=prd npx cypress open",
+    "cy:hml:run": "cross-env AMBIENTE=hml npx cypress run",
+    "report:allure": "node node_modules/allure-commandline/index.js generate allure-results -o allure-report",
+    "report:open": "node node_modules/allure-commandline/index.js open allure-report",
+    "test:and:report": "npm run cy:hml:run && npm run report:allure"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "eslint": "^9.39.1",
+    "js-yaml": "^4.1.1"
+  }
+}
