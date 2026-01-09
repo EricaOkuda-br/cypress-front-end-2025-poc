@@ -19,9 +19,9 @@
   },
   "scripts": {
     "eslint": "npx eslint .",
-    "cy:hml": "cross-env AMBIENTE=hml npx cypress open",
-    "cy:qas": "cross-env AMBIENTE=qas npx cypress open",
-    "cy:prd": "cross-env AMBIENTE=prd npx cypress open",
+    "cy:hml": "cross-env AMBIENTE=hml npx cypress open --browser electron",
+    "cy:qas": "cross-env AMBIENTE=qas npx cypress open --browser electron",
+    "cy:prd": "cross-env AMBIENTE=prd npx cypress open --browser electron",
     "cy:hml:run": "cross-env AMBIENTE=hml npx cypress run",
     "report:allure": "node node_modules/allure-commandline/index.js generate allure-results -o allure-report",
     "report:open": "node node_modules/allure-commandline/index.js open allure-report",

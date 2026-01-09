@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import { ControllerPages } from '../support/pages/controller_pages.js'
+import { ControllerPages } from '../support/pages/controller_pages.js';
 
 const controllerPages = new ControllerPages();
 
@@ -10,9 +10,11 @@ describe('example to-do app', () => {
    controllerPages.loginPage.visit();
   })
   it.only('Tela de Login', () => {
+    const username = 'standard_user'
+    const password = 'secret_sauce'
     const expectedTitle = 'Swag Labs'
-    controllerPages.loginPage.fillUsername();
-    controllerPages.loginPage.fillPassword();
+    controllerPages.loginPage.fillUsername(username);
+    controllerPages.loginPage.fillPassword(password);
     controllerPages.loginPage.clickLoginButton();
     controllerPages.loginPage.validarTituloLogin(expectedTitle);
   })

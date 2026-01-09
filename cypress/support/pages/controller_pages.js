@@ -1,4 +1,4 @@
-import { LoginPage} from '../../pages/login_page';
+import { LoginPage } from './login_page.js';
 
 export class ControllerPages {
    

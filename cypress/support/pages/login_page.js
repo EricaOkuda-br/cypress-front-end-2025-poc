@@ -1,18 +1,46 @@
-import { loadYamlElements } from "../../support/helper/yaml_elements_helper.js";
+import { loadYamlElements } from "../helper/yaml_elements_helper.js";
 
-export class LoginPage {  
+export class LoginPage {
+    element_login;
 
-    async initElements() {
-        this.element_login = await loadYamlElements('login_el.yaml');
+    ensureElements() {
+        if (this.element_login) {
+            return cy.wrap(this.element_login, { log: false });
+        }
+
+        return loadYamlElements("login_el.yaml", "login").then((elements) => {
+            this.element_login = elements;
+            return elements;
+        });
     }
 
-    
     visit() {
-        cy.visit('https://www.saucedemo.com/');
+        return this.ensureElements().then(() => {
+            cy.visit(Cypress.env("BASE_URL") || "https://www.saucedemo.com/");
+        });
     }
 
-    async fillUsername(username) {
+    fillUsername(username) {
+        return this.ensureElements().then(() => {
+            cy.get(this.element_login.iptLogin).type(username);
+        });
+    }
 
-        cy.get(this.element_login.iptLogin).type(username);
+    fillPassword(password) {
+        return this.ensureElements().then(() => {
+            cy.get(this.element_login.iptSenha).type(password);
+        });
+    }
+
+    clickLoginButton() {
+        return this.ensureElements().then(() => {
+            cy.get(this.element_login.btnLogin).click();
+        });
+    }
+
+    validarTituloLogin(expectedTitle) {
+        return this.ensureElements().then(() => {
+            cy.get(this.element_login.titLogin).should("have.text", expectedTitle);
+        });
     }
 }
