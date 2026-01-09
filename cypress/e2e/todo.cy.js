@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import { ControllerPages } from './pages/controller_pages.js'
+import { ControllerPages } from '../support/pages/controller_pages.js'
 
 const controllerPages = new ControllerPages();
 

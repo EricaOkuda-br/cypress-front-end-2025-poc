@@ -1,10 +1,21 @@
 {
+  "name": "cypress-front-end-2025-poc",
+  "version": "1.0.0",
+  "description": "Projeto de testes automatizados para front-end utilizando **Cypress** com a arquitetura **Page Object Model (POM)**. Este POC implementa testes de interface de usuário com elementos gerenciados via YAML e suporte a múltiplos ambientes.",
+  "homepage": "https://github.com/EricaOkuda-br/cypress-front-end-2025-poc#readme",
+  "bugs": {
+    "url": "https://github.com/EricaOkuda-br/cypress-front-end-2025-poc/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EricaOkuda-br/cypress-front-end-2025-poc.git"
+  },
+  "license": "ISC",
+  "author": "",
   "type": "module",
-  "devDependencies": {
-    "allure-commandline": "^2.34.1",
-    "allure-cypress": "^3.4.2",
-    "cross-env": "^10.1.0",
-    "cypress": "^15.7.0"
+  "main": "cypress.config.js",
+  "directories": {
+    "doc": "doc"
   },
   "scripts": {
     "eslint": "npx eslint .",
@@ -20,5 +31,11 @@
     "dotenv": "^17.2.3",
     "eslint": "^9.39.1",
     "js-yaml": "^4.1.1"
+  },
+  "devDependencies": {
+    "allure-commandline": "^2.34.1",
+    "allure-cypress": "^3.4.2",
+    "cross-env": "^10.1.0",
+    "cypress": "^15.7.0"
   }
 }
