@@ -20,13 +20,14 @@ export class LoginPage {
         });
     }
 
-    fillUsername(username) {
+    fillUsername(username = Cypress.env("USUARIO") || "standard_user") {
         return this.ensureElements().then(() => {
             cy.get(this.element_login.iptLogin).type(username);
+            cy.get(this.element_login.iptLogin).should("have.value", username);
         });
     }
 
-    fillPassword(password) {
+    fillPassword(password = Cypress.env("SENHA") || "secret_sauce") {
         return this.ensureElements().then(() => {
             cy.get(this.element_login.iptSenha).type(password);
         });
